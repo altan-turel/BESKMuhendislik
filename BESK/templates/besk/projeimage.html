@@ -1,0 +1,42 @@
+{% extends 'besk/base.html' %}
+    
+    {% block content %}
+        <!-- Main Wrapper-->
+        <main class="wrapper">
+            <div class="theme_slider bg-black">
+                <div class="container">
+                    <div class="swiper swiper_theme_slider">
+                        <div class="swiper-wrapper">
+                            {% for image in images%}
+                                <div class="swiper-slide my-3">
+                                    <div class="slider" style="background-repeat: no-repeat; background-size: 100% 100%; background-image: url('{{image.image.url}}')">
+                                        <div class="slide_content">
+                                            <div class="slide_content_wrapper mb-0 h-auto bg-dark-100">
+                                                <div class="slide_content_inner">
+                                                    <div class="meta m-0">
+                                                        <div class="category text-olive text-uppercase">{{ image.who }}</div>
+                                                    </div>
+                                                    <h4><a href="project-details.html" class="text-white">{{ image.name }}</a></h4>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% include 'besk/part/__footer.html' %}
+        <ul class="grid_lines d-none d-md-flex justify-content-between">
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+        </ul>
+    {% endblock %}

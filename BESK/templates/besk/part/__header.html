@@ -1,0 +1,153 @@
+<!-- Preloader -->
+{% load static %}
+<div id="preloader">
+    <div class="preloader-inner">
+        <div class="spinner"></div>
+        <div class="loading-text">
+            <span data-preloader-text="5" class="characters">5</span>
+            
+            <span data-preloader-text="K" class="characters">K</span>
+
+            <span data-preloader-text="M" class="characters">M</span>
+
+            <span data-preloader-text="U" class="characters">Ü</span>
+
+            <span data-preloader-text="H" class="characters">H</span>
+
+            <span data-preloader-text="E" class="characters">E</span>
+
+            <span data-preloader-text="N" class="characters">N</span>
+            
+            <span data-preloader-text="D" class="characters">D</span>
+
+            <span data-preloader-text="İ" class="characters">İ</span>
+
+            <span data-preloader-text="S" class="characters">S</span>
+
+            <span data-preloader-text="L" class="characters">L</span>
+
+            <span data-preloader-text="İ" class="characters">İ</span>
+
+            <span data-preloader-text="K" class="characters">K</span>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Color Mode Switcher -->
+<div id="mode_switcher">
+    <span><i class="bi bi-moon-fill"></i></span>	
+</div>        
+
+<!-- Cursor Effect -->
+<div class="pointer bnz-pointer" id="bnz-pointer"></div>
+
+
+<header class="header">				
+    <div class="container">
+        <div class="header_inner d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <a href="{% url 'index' %}" class="light_logo"><img src="{% static 'img/logo-light.svg' %}" alt="logo"></a>
+                <a href="{% url 'index' %}" class="dark_logo"><img src="{% static 'img/logo-dark.svg' %}" alt="logo"></a>
+            </div>
+            <nav class="mainnav d-none d-lg-block" style="z-index: 999;">
+                <ul class="main_menu">
+                    <li class="menu-item menu-item-has-children"><a href="#">HAKKIMIZDA</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item"><a href="{% url 'about' %}">HAKKIMIZDA</a></li>
+                            <li class="menu-item"><a href="{% url 'referans' %}">REFERANSLARIMIZ</a></li>
+                            <li class="menu-item"><a href="{% url 'contact' %}">İLETİŞİM</a></li>
+                            <li class="menu-item menu-item-has-children"><a href="#">ŞİRKETE AİT BELGE VE DÖKÜMANLAR</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="">İŞYERİ TESCİL BELGESİ (İTB)</a></li>
+                                    <li class="menu-item"><a href="">SERBEST İNŞAAT MÜHENDİSLİĞİ BELGESİ (SİM)</a></li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="{% url 'faaliyet' %}">FAALİYET ALANLARIMIZ</a></li>
+                    <li class="menu-item menu-item-has-children"><a href="#">PROGRAMLAR</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item"><a href="">MİMARLIK</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="{% url 'acad' %}">ACAD</a>
+                                    <li class="menu-item"><a href="{% url '3dsmax' %}">3DMAX</a>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="">İNŞAAT MÜHENDİSLİĞİ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="{% url 'sta4cad' %}">STA4CAD</a>
+                                    <li class="menu-item"><a href="{% url 'probina' %}">PROBINA</a>
+                                    <li class="menu-item"><a href="">ORION</a>
+                                    <li class="menu-item"><a href="">RWCAD</a>
+                                    <li class="menu-item"><a href="">OSKA</a>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="">MAKİNE MÜHENDİSLİĞİ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="{% url 'acad' %}">ACAD</a>
+                                    <li class="menu-item"><a href="">MTH TESİSAT HESAP YAZILIMI</a>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="">ELEKTRİK MÜHENDİSLİĞİ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="{% url 'acad' %}">ACAD</a>
+                                </ul>
+                            </li>
+                            <li class="menu-item"><a href="">HARİTA MÜHENDİSLİĞİ</a>
+                                <ul class="sub-menu">
+                                    <li class="menu-item"><a href="{% url 'acad' %}">ACAD</a>
+                                    <li class="menu-item"><a href="">NETCAD</a>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="{% url 'projeimage' %}">PROJELERE AİT GÖRSELLER</a></li>
+                </ul>
+            </nav>
+            <div class="header_right_part d-flex align-items-center" style="z-index: 999;">
+                <button class="aside_open">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+                					
+                <button class="ma5menu__toggle d-lg-none d-block" type="button">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="aside_info_wrapper">
+    <button class="aside_close"><i class="bi bi-x-lg"></i></button>
+    <div class="aside_logo">
+        <a href="{% url 'index' %}" class="light_logo"><img src="{% static 'img/logo-light.svg' %}" alt="logo"></a>
+        <a href="{% url 'index' %}" class="dark_logo"><img src="{% static 'img/logo-dark-lg.svg' %}" alt="logo"></a>
+    </div>
+    <div class="aside_info_inner">
+        <p>5K MÜHENDİSLİK MÜŞ.İNŞ.TUR. İÇ VE DIŞ TİC.SAN.LTD.ŞTİ.</p>
+        
+        <div class="aside_info_inner_box">
+            <h5>İletişim Adresi</h5>
+            <p>+90 542 320 03 65</p>
+            <p>YILDIZEVLER MAH. 721 SK. 10/12 ÇANKAYA/ANKARA<br> Turkiye</p>
+            <p>beskmuhendislik2@gmail.com</p>
+
+            <h5>Office Address</h5>
+            <p>YILDIZEVLER MAH. 721 SK. 10/12 ÇANKAYA/ANKARA<br> Turkiye</p>
+        </div>
+        <div class="social_sites">
+            <ul class="d-flex align-items-center justify-content-center">
+                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+{% extends 'besk/base.html' %}
+    
+    {% block content %}
+        <!-- Main Wrapper-->
+        <main class="wrapper">
+            <!-- Scroll Progress -->
+            
+            <section class="project-details bg-dark-200">
+                <div class="container">
+                    <div class="gallery_slider">
+                        <div class="swiper swiper_gallery">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="gallery-image">
+                                        <img src="{{ proje.image.url }}" alt="img" height="750px">
+                                    </div>
+                                </div>
+                                
+                                {% if proje.image1 %}
+                                    <div class="swiper-slide">
+                                        <div class="gallery-image">
+                                            <img src="{{ proje.image1.url }}" alt="img" height="750px">
+                                        </div>
+                                    </div>
+                                {% endif %}
+                                {% if proje.image1 %}
+                                    <div class="swiper-slide">
+                                        <div class="gallery-image">
+                                            <img src="{{ proje.image2.url }}" alt="img" height="750px">
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            <!-- Add Pagination -->
+                            <!-- <div class="swiper-pagination"></div> -->
+
+                            <!-- Add Buttons -->
+                            <div class="swiper-navigation">
+                                <div class="swiper-button-prev"><i class="bi bi-arrow-left"></i></div>
+                                <div class="swiper-button-next"><i class="bi bi-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="sidebar">
+                                <div class="project-information">
+                                    <h6 class="widget-title">
+                                        Proje Bilgileri
+                                        <span class="title-line"></span>
+                                    </h6>
+                                    <ul>
+                                        <li>
+                                            <span class="data">Proje Name:</span> <span class="value">{{ proje.name }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="data">Sorumlu:</span> <span class="value">{{ proje.team }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="data">Proje Sahibi:</span> <span class="value">{{ proje.who }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="data">Date:</span> <span class="value">{{ proje.start}} - {{ proje.finish }}</span>
+                                        </li>
+                                        <li>
+                                            <span class="data">Lokasyon:</span> <span class="value">{{ proje.sehir }}, {{ proje.ulke }}</span>
+                                        </li>
+                                        
+                                    </ul>
+
+                                    <div class="project-share">
+                                        <ul>
+                                            <li>Share:</li>
+                                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                            <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+                                            <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                            <li><a href="#"><i class="bi bi-pinterest"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-8 col-md-8">
+                            <div class="project-details_inner">
+                                <div class="post_content">
+									<div class="post-header">
+										<h3 class="post-title">{{ proje.name }}</h3>
+									</div>
+									<div class="fulltext">
+										<p>
+											5K Mühendislik tarafından {{ proje.who }} Kurum/Kişi'nin hayalleri gerçek oldu. 
+										</p>
+                                    </div>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        {% include 'besk/part/__footer.html' %}
+        <ul class="grid_lines d-none d-md-flex justify-content-between">
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+        </ul>
+    {% endblock %}

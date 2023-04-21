@@ -1,0 +1,71 @@
+{% extends 'besk/base.html' %}
+    
+    {% block content %}
+        <!-- Main Wrapper-->
+        <main class="wrapper">
+            <div class="theme_slider bg-black">
+                <div class="container">
+                    <div class="swiper swiper_theme_slider">
+                        <div class="swiper-wrapper">  
+                            <section class="projects packery"  style="width:100% !important;">
+                                <!-- Section Grid Lines -->
+                                <ul class="grid_lines d-none d-md-flex justify-content-between">
+                                    <li class="grid_line"></li>
+                                    <li class="grid_line"></li>
+                                    <li class="grid_line"></li>
+                                    <li class="grid_line"></li>
+                                    <li class="grid_line"></li>
+                                    <li class="grid_line"></li>
+                                    <li class="grid_line"></li>
+                                </ul>
+                                <div class="large_font">
+                                    <h2 class="floating_element text-dark-200 d-flex justify-content-center" data-aos="fade-right" data-aos-duration="1000">Galeri</h2>
+                                </div>
+                                <div class="container">
+                                    <div class="section-header text-center has_line">
+                                        <h2 class="text-white">Proje Galerisi</h2>
+                                        <div class="section-desc row align-items-center justify-content-center">
+                                            <div class="col-lg-6 text-end">
+                                                <p>Hayallerinizi Kurun, </p>
+                                            </div>
+                                            <div class="col-lg-6 text-start">
+                                                <p>Hayallerinizi Yaşayın </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid gutter-20 clearfix"> 
+                                        <div class="grid-sizer"></div>
+                                            {% for project in projects %}
+                                                <div class="grid-item residences">
+                                                    <div class="thumb">
+                                                        <img class="item_image" src="{{ project.image.url }}" alt="" style="width:1120px !important; height:670px !important;">
+                                                        <div class="works-info">
+                                                            <div class="label-text">
+                                                                <h6><a href="#">{{ project.who }}</a></h6>
+                                                                <h5><a href="project-details.html">{{ project.name }}</a></h5>
+                                                                <div class="details_link"><a href="{% url 'projedetail' project.id %}"><span class="link_text">Proje Detayı</span> <span class="link_icon"><span class="line"></span> <span class="circle"></span><span class="dot"></span></span></a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>                          
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% include 'besk/part/__footer.html' %}
+        <ul class="grid_lines d-none d-md-flex justify-content-between">
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+        </ul>
+    {% endblock %}

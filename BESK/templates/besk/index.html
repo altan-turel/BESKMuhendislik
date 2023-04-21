@@ -1,0 +1,94 @@
+{% extends 'besk/base.html' %}
+    
+    {% block content %}
+        <!-- Main Wrapper-->
+        <main class="wrapper">
+            <div class="theme_slider bg-black">
+                <div class="container">
+                    <div class="swiper swiper_theme_slider" style="z-index: 1;">
+                        <div class="swiper-wrapper">
+                            {% for proje in  projeler %}
+                                <div class="swiper-slide">
+                                    <div class="slider" style="background-size: 900px 600px; background-repeat:no-repeat; background-image: url('{{proje.image.url}}')">
+                                        <div class="slide_content">
+                                            <div class="slide_content_wrapper mb-0 h-auto bg-dark-100">
+                                                <div class="slide_content_inner">
+                                                    <div class="meta m-0">
+                                                        <div class="category text-olive text-uppercase">{{ proje.who }}</div>
+                                                    </div>
+                                                    <h4><a href="{% url 'projedetail' proje.id %}" class="text-white">{{ proje.name }}</a></h4>
+                                                    <div class="details_link">
+                                                        <a href="{% url 'projedetail' proje.id %}">
+                                                            <span class="link_text">Detaylar</span> 
+                                                            <span class="link_icon">
+                                                                <span class="line"></span> 
+                                                                <span class="circle"></span>
+                                                                <span class="dot"></span>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            {% endfor %}
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+
+                        <!-- Add Buttons -->
+                        <div class="swiper-navigation" style="z-index: 999;">
+                            <div class="swiper-button-prev"><i class="bi bi-arrow-left"></i></div>
+                            <div class="swiper-button-next"><i class="bi bi-arrow-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider_bg bg-dark-100"></div>
+            </div>
+
+            <section class="services bg-dark-100 pt-4 pb-0" style="z-index: 1;">
+                <div class="container">
+                    <h3 class="text-center mb-5"> Faaliyet Alanları </h3>
+                    <div class="row">
+                        {% for faaliyet in faaliyetler %}
+                            <div class="col-lg-4 mb-5" data-aos="fade-up" data-aos-duration="500">
+                                <div class="icon_box">
+                                    <h6>{{ faaliyet.id }}</h6>
+                                    <img src="../static/img/icon_box/d1.svg" alt="Icon Box" class="dark">
+                                    <img src="../static/img/icon_box/d1-light.svg" alt="Icon Box" class="light">
+                                    <h4 class="text-white"><a href="service-details.html">{{ faaliyet.name }}</a></h4>
+                                    <p class="text-gray-600">BEŞKA MÜHENDİSLİK {{ faaliyet.name }}</p>
+                                    <div class="arrow_effect">
+                                        <a href="service-details.html"><span class="crossline1"></span><span class="crossline2"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+
+
+
+        </main>
+
+        <!-- Footer-->
+        {% include 'besk/part/__footer.html' %}
+
+        <div class="totop">
+            <a href="#">UP</a>
+        </div>
+
+        <!-- Section Grid Lines -->
+        <ul class="grid_lines d-none d-md-flex justify-content-between" style="z-index: 0;">
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+        </ul>
+    {% endblock %}

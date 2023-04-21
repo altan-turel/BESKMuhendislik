@@ -1,0 +1,85 @@
+{% extends 'besk/base.html' %}
+    
+    {% block content %}
+
+		<!-- Page Header -->
+        <div class="page_header">
+            <div class="page_header_inner">
+                <div class="container">
+                    <div class="page_header_content d-flex align-items-center justify-content-between">
+                        <h2 class="heading">İletişim</h2>
+                        <ul class="breadcrumb d-flex align-items-center">
+                            <li><a href="{% url 'index' %}">Anasayfa</a></li>
+                            <li class="active">İletişim</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+        
+        <!-- Main Wrapper-->
+        <main class="wrapper">
+            <section class="gmap box_padding">
+				<div class="gmapbox" data-aos="zoom-in" data-aos-duration="500">
+                    <div id="googleMap" class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2326.7668539593506!2d32.85745633097874!3d39.87662573863492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34579668dd6c3%3A0x1bed88f069df0da7!2zWcSxbGTEsXpldmxlciwgNzIxLiBTay4gTm86MTAsIDA2NTUwIMOHYW5rYXlhL0Fua2FyYQ!5e1!3m2!1str!2str!4v1681819827217!5m2!1str!2str" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                    </div>
+                </div>
+			</section>
+
+            <section class="contact_us bg-dark-200">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-lg-5" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="section-header">
+                                <h1 class="text-white text-uppercase mb-4">Proje fikirleriniz için iletişime geçin</h1>
+                                <p class="$gray-600">Projenizle ilgili herhangi bir sorunuz veya geri bildiriminiz varsa, lütfen aşağıdaki formu kullanarak bize ulaşın. Sizden gelen mesajları en kısa sürede yanıtlayacağız.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="home_contact">
+                                <form method="POST">
+                                    {% csrf_token %}
+                                    <input class="form-control form-control-lg" name="name" id="name" type="text" placeholder="Adınız*" required aria-label=".form-control-lg example">
+                                    <input class="form-control form-control-lg" name="phone" id="phone" type="number" placeholder="Telefon Numaranız*" aria-label=".form-control-lg example">
+                                    <input class="form-control form-control-lg" name="email" id="email" type="email" placeholder="Email Adresiniz*" required aria-label=".form-control-lg example">
+                                    <textarea class="form-control pt-4" name="message" id="message" placeholder="Mesajınız" rows="3"></textarea>
+                                    <div class="btn_group">
+                                        <button type="submit" class="btn olive">İletişime Geç</button>  
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Section Grid Lines -->
+                <ul class="grid_lines d-none d-md-flex justify-content-between">
+                    <li class="grid_line"></li>
+                    <li class="grid_line"></li>
+                    <li class="grid_line"></li>
+                    <li class="grid_line"></li>
+                    <li class="grid_line"></li>
+                    <li class="grid_line"></li>
+                    <li class="grid_line"></li>
+                </ul>
+            </section>
+        </main>
+
+        {% include 'besk/part/__footer.html' %}
+
+        <div class="totop">
+            <a href="#">UP</a>
+        </div>
+
+        <!-- Page Grid Lines -->
+        <ul class="grid_lines d-none d-md-flex justify-content-between">
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+            <li class="grid_line"></li>
+        </ul>
+    {% endblock content %}
